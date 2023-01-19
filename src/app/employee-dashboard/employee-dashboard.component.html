@@ -1,0 +1,138 @@
+<nav class="navbar navbar-light nav-color">
+    <div class="container-fluid">
+        <h1 style="color: white;">Employee Dashboard</h1>
+        <div class="d-flex">
+            <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{employeeData.firstname+' '+employeeData.lastname}}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" routerLink="/employee-profile">Profile</a>
+    <a class="dropdown-item" routerLink="/employee-auth">Logout</a>
+  </div>
+</div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="col">
+        <div class="row">
+            <h5>Note : 8 hrs = 100% allocation</h5>
+        </div>
+        <div class="row">
+            {{employeeData.firstname+' '+employeeData.lastname}}
+        </div>
+        <!-- <div class="row">
+            {{ date | date:'fullDate'}}
+        </div> -->
+    </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm aside">
+        Project Name
+    </div>
+    <div class="col-sm day">
+      Monday
+      {{date | date:'mediumDate'}}
+    </div>
+    <div class="col-sm day">
+      Tuesday
+      {{previousDate | date:'mediumDate'}}
+    </div>
+    <div class="col-sm day">
+      Wednesday
+    </div>
+    <div class="col-sm day">
+        Thursday
+    </div>
+    <div class="col-sm day">
+        Friday
+    </div>
+    <div class="col-sm day">
+        Saturday
+    </div>
+    <div class="col-sm day">
+        Sunday
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm aside">
+      Training
+    </div>
+    <div class="col-sm">
+      one
+    </div>
+    <div class="col-sm">
+      two
+    </div>
+    <div class="col-sm">
+      three
+    </div>
+    <div class="col-sm">
+      four
+    </div>
+    <div class="col-sm">
+      five
+    </div>
+    <div class="col-sm">
+      six
+    </div>
+    <div class="col-sm">
+      seven
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm aside">
+      Miscellaneous
+    </div>
+    <div class="col-sm">
+      one
+    </div>
+    <div class="col-sm">
+      two
+    </div>
+    <div class="col-sm">
+      three
+    </div>
+    <div class="col-sm">
+      four
+    </div>
+    <div class="col-sm">
+      five
+    </div>
+    <div class="col-sm">
+      six
+    </div>
+    <div class="col-sm">
+      seven
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm aside">
+      Project Name
+    </div>
+    <div class="col-sm">
+      one
+    </div>
+    <div class="col-sm">
+      two
+    </div>
+    <div class="col-sm">
+      three
+    </div>
+    <div class="col-sm">
+      four
+    </div>
+    <div class="col-sm">
+      five
+    </div>
+    <div class="col-sm">
+      six
+    </div>
+    <div class="col-sm">
+      seven
+    </div>
+  </div>
+</div>

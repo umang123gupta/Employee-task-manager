@@ -1,0 +1,126 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: white;">Admin Dashboard</h1>
+        <div class="d-flex">
+            <button (click)="clickAddEmployee()" type="button" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-success">Add
+                Employee</button>
+            <button style="margin-left: 20px;" routerLink="/admin-auth" class="btn btn-danger">Logout</button>
+        </div>
+    </div>
+</nav>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email ID</th>
+            <th scope="col">Phone No.</th>
+            <th scope="col">DOJ</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Manager's Name</th>
+            <th scope="col">CTC</th>
+            <th scope="col">Password</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of employeeData">
+            <td>{{row.id}}</td>
+            <td>{{row.firstname}}</td>
+            <td>{{row.lastname}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.phone}}</td>
+            <td>{{row.doj}}</td>
+            <td>{{row.designation}}</td>
+            <td>{{row.manager}}</td>
+            <td>{{row.ctc}}</td>
+            <td>{{row.password}}</td>
+            <td>{{row.status}}</td>
+            <td>
+                <button (click)="onEdit(row)" type="button" data-toggle="modal" data-target="#exampleModalCenter"  class="btn btn-info">Edit</button>
+                <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Employee Detail</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="form-group">
+                        <label for="firstname">First Name</label>
+                        <input formControlName="firstname" type="text" class="form-control" id="firstname" aria-describedby="emailHelp"
+                            placeholder="Enter First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input formControlName="lastname" type="text" class="form-control" id="lastname" placeholder="Enter Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input formControlName="email" type="email" class="form-control" id="email" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone No.</label>
+                        <input formControlName="phone" type="text" class="form-control" id="phone" placeholder="Enter Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="doj">Date Of Joining</label>
+                        <input formControlName="doj" type="date" class="form-control" id="doj" placeholder="Enter Date of Joining">
+                    </div>
+                    <div class="form-group">
+                        <label for="designation">Designation</label>
+                        <input formControlName="designation" type="text" class="form-control" id="designation" placeholder="Enter Designation">
+                    </div>
+                    <div class="form-group">
+                        <label for="manager">Manager's Name</label>
+                        <input formControlName="manager" type="text" class="form-control" id="manager" placeholder="Enter Manager Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="ctc">CTC</label>
+                        <input formControlName="ctc" type="number" class="form-control" id="ctc" placeholder="Enter CTC">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input formControlName="password" type="password" class="form-control" id="password" placeholder="Enter Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <div class="form-check">
+                            <input formControlName="status" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="Active" >
+                            <label class="form-check-label" for="exampleRadios1">
+                                Active
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input formControlName="status"  class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                value="Inactive" checked>
+                            <label class="form-check-label" for="exampleRadios2">
+                                Inactive
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" *ngIf="showAdd" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
+                <button type="button" *ngIf="showUpdate" (click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

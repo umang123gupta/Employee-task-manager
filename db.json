@@ -1,0 +1,67 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstname": "test",
+      "lastname": "test",
+      "email": "test@mail.com",
+      "phone": "8899889988",
+      "doj": "2021-12-31",
+      "designation": "Team",
+      "manager": "XYZ",
+      "ctc": 847887,
+      "status": "Inactive",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "firstname": "Rohan",
+      "lastname": "Singh",
+      "email": "a@a.com",
+      "phone": "1212121212",
+      "doj": "2019-10-30",
+      "designation": "Team Member",
+      "manager": "ABCD",
+      "ctc": 7386786,
+      "status": "Active",
+      "password": "123456"
+    },
+    {
+      "id": 3,
+      "firstname": "Ram",
+      "lastname": "Goel",
+      "email": "ram@gmail.com",
+      "phone": "9058847098",
+      "doj": "2021-12-31",
+      "designation": "Java",
+      "manager": "Manish",
+      "ctc": 8888,
+      "status": "Active",
+      "password": "ram123"
+    }
+  ],
+  "admin": [
+    {
+      "firstname": "Umang",
+      "lastname": "Gupta",
+      "phone": "8864959880",
+      "doj": "2022-06-04",
+      "email": "umang8864gupta@gmail.com",
+      "password": "123456",
+      "id": 1
+    }
+  ],
+  "profile": {
+    "id": 2,
+    "firstname": "Rohan",
+    "lastname": "Singh",
+    "email": "a@a.com",
+    "phone": "1212121212",
+    "doj": "2019-10-30",
+    "designation": "Team Member",
+    "manager": "ABCD",
+    "ctc": 7386786,
+    "status": "Active",
+    "password": "123456"
+  }
+}
